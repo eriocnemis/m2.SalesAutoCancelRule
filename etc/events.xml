@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Eriocnemis, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="eriocnemis_sales_autocancel_rule_collection_load_after">
+        <observer name="eriocnemis_sales_autocancel_rule" instance="Eriocnemis\SalesAutoCancelRule\Observer\LoadRulesObserver"/>
+    </event>
+    <event name="eriocnemis_sales_autocancel_rule_load_after">
+        <observer name="eriocnemis_sales_autocancel_rule_store" instance="Eriocnemis\SalesAutoCancelRule\Observer\LoadStoreObserver"/>
+        <observer name="eriocnemis_sales_autocancel_rule_customer_group" instance="Eriocnemis\SalesAutoCancelRule\Observer\LoadCustomerGroupObserver"/>
+        <observer name="eriocnemis_sales_autocancel_rule_method" instance="Eriocnemis\SalesAutoCancelRule\Observer\LoadMethodObserver"/>
+    </event>
+    <event name="eriocnemis_sales_autocancel_rule_save_after">
+        <observer name="eriocnemis_sales_autocancel_rule_store" instance="Eriocnemis\SalesAutoCancelRule\Observer\SaveStoreObserver"/>
+        <observer name="eriocnemis_sales_autocancel_rule_customer_group" instance="Eriocnemis\SalesAutoCancelRule\Observer\SaveCustomerGroupObserver"/>
+        <observer name="eriocnemis_sales_autocancel_rule_method" instance="Eriocnemis\SalesAutoCancelRule\Observer\SaveMethodObserver"/>
+    </event>
+</config>

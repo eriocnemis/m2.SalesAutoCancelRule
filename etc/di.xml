@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Eriocnemis, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- preference -->
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\Data\Rule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleSearchResultInterface" type="Eriocnemis\SalesAutoCancelRule\Model\Data\RuleSearchResult"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\GetRuleByIdInterface" type="Eriocnemis\SalesAutoCancelRule\Model\GetRuleById"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\GetRuleListInterface" type="Eriocnemis\SalesAutoCancelRule\Model\GetRuleList"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\DeleteRuleByIdInterface" type="Eriocnemis\SalesAutoCancelRule\Model\DeleteRuleById"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\SaveRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\SaveRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRuleApi\Api\ValidateRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ValidateRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\ConvertRuleToDataInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ConvertRuleToData"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\ConvertDataToRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ConvertDataToRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetStoreIdsByRuleIdInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetStoreIdsByRuleId"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetStoreIdsByRuleIdsInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetStoreIdsByRuleIds"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetCustomerGroupIdsByRuleIdInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetCustomerGroupIdsByRuleId"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetCustomerGroupIdsByRuleIdsInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetCustomerGroupIdsByRuleIds"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetMethodsByRuleIdInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetMethodsByRuleId"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetMethodsByRuleIdsInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\GetMethodsByRuleIds"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\DetachStoreFromRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\DetachStoreFromRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\AttachStoreToRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\AttachStoreToRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\DetachMethodFromRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\DetachMethodFromRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\AttachMethodToRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\AttachMethodToRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\DetachCustomerGroupFromRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\DetachCustomerGroupFromRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\AttachCustomerGroupToRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\AttachCustomerGroupToRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetActiveRuleListInterface" type="Eriocnemis\SalesAutoCancelRule\Model\GetActiveRuleList"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\GetMatchOrderListInterface" type="Eriocnemis\SalesAutoCancelRule\Model\GetMatchOrderList"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\CancelOrdersByRuleInterface" type="Eriocnemis\SalesAutoCancelRule\Model\CancelOrdersByRule"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\CancelOrdersInterface" type="Eriocnemis\SalesAutoCancelRule\Model\CancelOrders"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Api\CancelOrderInterface" type="Eriocnemis\SalesAutoCancelRule\Model\CancelOrder"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Model\Rule\ValidatorInterface" type="Eriocnemis\SalesAutoCancelRule\Model\Rule\Validator"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\FilterPoolInterface" type="Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\FilterPool"/>
+    <preference for="Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\HandlerPoolInterface" type="Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\HandlerPool"/>
+    <!-- validator configuration -->
+    <type name="Eriocnemis\SalesAutoCancelRule\Model\Rule\Validator">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="name" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Rule\Validator\NameValidator</item>
+                <item name="duration_unit" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Rule\Validator\DurationUnitValidator</item>
+                <item name="status" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Rule\Validator\StatusValidator</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- order handler configuration -->
+    <type name="Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\HandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="state" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\StateHandler</item>
+                <item name="comment" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\CommentHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- order filter configuration -->
+    <type name="Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\FilterPool">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="state" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\StateFilter</item>
+                <item name="store" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\StoreFilter</item>
+                <item name="customer_group" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\CustomerGroupFilter</item>
+                <item name="created_at" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\CreatedAtFilter</item>
+                <item name="payment_method" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\Order\Filter\PaymentMethodFilter</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- payment join configuration -->
+    <virtualType name="EriocnemisSalesAutoCancelOrderJoinProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor">
+        <arguments>
+            <argument name="customJoins" xsi:type="array">
+                <item name="sales_order_payment.method" xsi:type="object">Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\JoinPaymentMethodToOrder</item>
+            </argument>
+            <argument name="fieldMapping" xsi:type="array">
+                <item name="payment_method" xsi:type="string">sales_order_payment.method</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="EriocnemisSalesAutoCancelOrderFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
+        <arguments>
+            <argument name="fieldMapping" xsi:type="array">
+                <item name="payment_method" xsi:type="string">sales_order_payment.method</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="EriocnemisSalesAutoCancelOrderCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="joins" xsi:type="object">EriocnemisSalesAutoCancelOrderJoinProcessor</item>
+                <item name="filters" xsi:type="object">EriocnemisSalesAutoCancelOrderFilterProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Eriocnemis\SalesAutoCancelRule\Model\GetMatchOrderList">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">EriocnemisSalesAutoCancelOrderCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Sales\Model\CronJob\CleanExpiredOrders">
+        <plugin name="eriocnemis_sales_autocancel_rule" type="Eriocnemis\SalesAutoCancelRule\Plugin\Sales\Model\CronJob\CleanExpiredOrdersPlugin"/>
+    </type>
+</config>

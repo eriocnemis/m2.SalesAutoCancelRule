@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Eriocnemis, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <!-- shipping rules table -->
+    <table name="eriocnemis_sales_autocancel_rule" resource="default" engine="innodb" comment="Auto Cancel Rule">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="smallint" name="customer_notified" padding="5" unsigned="true" nullable="true" identity="false" default="0" comment="Customer Notified"/>
+        <column xsi:type="smallint" name="visible_on_front" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Visible On Front"/>
+        <column xsi:type="smallint" name="duration_unit" padding="5" unsigned="true" nullable="false" identity="false" default="1" comment="Duration Unit"/>
+        <column xsi:type="smallint" name="duration" padding="5" unsigned="true" nullable="false" identity="false" comment="Duration"/>
+        <column xsi:type="smallint" name="methods_access" padding="5" unsigned="true" nullable="false" identity="false" default="1" comment="Methods Access"/>
+        <column xsi:type="smallint" name="status" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+        </constraint>
+        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_STATUS_TO_DATE_FROM_DATE" indexType="btree">
+            <column name="status"/>
+        </index>
+    </table>
+    <!-- customer groups relation table -->
+    <table name="eriocnemis_sales_autocancel_rule_customer_group" resource="default" engine="innodb" comment="Auto Cancel Rule To Groups Relations">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Rule ID"/>
+        <column xsi:type="int" name="customer_group_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Customer Group ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+            <column name="customer_group_id"/>
+        </constraint>
+        <constraint xsi:type="foreign"
+            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_CSTR_GROUP_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            table="eriocnemis_sales_autocancel_rule_customer_group"
+            column="rule_id"
+            referenceTable="eriocnemis_sales_autocancel_rule"
+            referenceColumn="rule_id"
+            onDelete="CASCADE"/>
+        <constraint xsi:type="foreign"
+            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID"
+            table="eriocnemis_sales_autocancel_rule_customer_group"
+            column="customer_group_id"
+            referenceTable="customer_group"
+            referenceColumn="customer_group_id"
+            onDelete="CASCADE"/>
+    </table>
+    <!-- stores relation table -->
+    <table name="eriocnemis_sales_autocancel_rule_store" resource="default" engine="innodb" comment="Auto Cancel Rule To Stores Relations">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Rule ID"/>
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" comment="Store ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign"
+            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            table="eriocnemis_sales_autocancel_rule_store"
+            column="rule_id"
+            referenceTable="eriocnemis_sales_autocancel_rule"
+            referenceColumn="rule_id"
+            onDelete="CASCADE"/>
+        <constraint xsi:type="foreign"
+            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_ID_ST_ST_ID"
+            table="eriocnemis_sales_autocancel_rule_store"
+            column="store_id"
+            referenceTable="store"
+            referenceColumn="store_id"
+            onDelete="CASCADE"/>
+        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_ID" indexType="btree">
+            <column name="store_id"/>
+        </index>
+    </table>
+    <!-- payment methods relation table -->
+    <table name="eriocnemis_sales_autocancel_rule_payment" resource="default" engine="innodb" comment="Auto Cancel Rule To Payment Methods Relations">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Rule ID"/>
+        <column xsi:type="varchar" name="payment_method" nullable="false" length="120" comment="Payment Method"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+            <column name="payment_method"/>
+        </constraint>
+        <constraint xsi:type="foreign"
+            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_PAYMENT_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            table="eriocnemis_sales_autocancel_rule_payment"
+            column="rule_id"
+            referenceTable="eriocnemis_sales_autocancel_rule"
+            referenceColumn="rule_id"
+            onDelete="CASCADE"/>
+        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_PAYMENT_METHOD" indexType="btree">
+            <column name="payment_method"/>
+        </index>
+    </table>
+</schema>
