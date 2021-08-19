@@ -1,0 +1,58 @@
+{
+    "eriocnemis_sales_autocancel_rule": {
+        "column": {
+            "rule_id": true,
+            "name": true,
+            "customer_notified": true,
+            "visible_on_front": true,
+            "duration_unit": true,
+            "duration": true,
+            "methods_access": true,
+            "status": true
+        },
+        "index": {
+            "ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STATUS": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "eriocnemis_sales_autocancel_rule_customer_group": {
+        "column": {
+            "rule_id": true,
+            "customer_group_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_55C976DC707B44ED69A74BAC329758AB": true,
+            "FK_57255A3B0F98211CC7CA85FD6F54CC7D": true
+        }
+    },
+    "eriocnemis_sales_autocancel_rule_store": {
+        "column": {
+            "rule_id": true,
+            "store_id": true
+        },
+        "index": {
+            "ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_STORE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_ED118B6F97899DDC3526A7D009B93AA4": true,
+            "ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_STORE_ID_STORE_STORE_ID": true
+        }
+    },
+    "eriocnemis_sales_autocancel_rule_payment": {
+        "column": {
+            "rule_id": true,
+            "payment_method": true
+        },
+        "index": {
+            "ERIOCNEMIS_SALES_AUTOCANCEL_RULE_PAYMENT_PAYMENT_METHOD": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_1A5AF148E1DD61C022B8E1DB75C229A8": true
+        }
+    }
+}

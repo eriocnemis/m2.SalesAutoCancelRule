@@ -20,7 +20,7 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="rule_id"/>
         </constraint>
-        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_STATUS_TO_DATE_FROM_DATE" indexType="btree">
+        <index referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STATUS" indexType="btree">
             <column name="status"/>
         </index>
     </table>
@@ -33,14 +33,14 @@
             <column name="customer_group_id"/>
         </constraint>
         <constraint xsi:type="foreign"
-            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_CSTR_GROUP_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_CUSTOMER_GROUP_RULE_ID_ERIOCNEMIS_SALES_AUTOCANCEL_RULE_RULE_ID"
             table="eriocnemis_sales_autocancel_rule_customer_group"
             column="rule_id"
             referenceTable="eriocnemis_sales_autocancel_rule"
             referenceColumn="rule_id"
             onDelete="CASCADE"/>
         <constraint xsi:type="foreign"
-            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID"
+            referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_CUSTOMER_GROUP_CUSTOMER_GROUP_ID_CUSTOMER_GROUP_CUSTOMER_GROUP_ID"
             table="eriocnemis_sales_autocancel_rule_customer_group"
             column="customer_group_id"
             referenceTable="customer_group"
@@ -56,20 +56,20 @@
             <column name="store_id"/>
         </constraint>
         <constraint xsi:type="foreign"
-            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_RULE_ID_ERIOCNEMIS_SALES_AUTOCANCEL_RULE_RULE_ID"
             table="eriocnemis_sales_autocancel_rule_store"
             column="rule_id"
             referenceTable="eriocnemis_sales_autocancel_rule"
             referenceColumn="rule_id"
             onDelete="CASCADE"/>
         <constraint xsi:type="foreign"
-            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_ID_ST_ST_ID"
+            referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_STORE_ID_STORE_STORE_ID"
             table="eriocnemis_sales_autocancel_rule_store"
             column="store_id"
             referenceTable="store"
             referenceColumn="store_id"
             onDelete="CASCADE"/>
-        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_ST_ID" indexType="btree">
+        <index referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_STORE_ID" indexType="btree">
             <column name="store_id"/>
         </index>
     </table>
@@ -82,13 +82,13 @@
             <column name="payment_method"/>
         </constraint>
         <constraint xsi:type="foreign"
-            referenceId="ERIOCNEMIS_SLS_ATCL_RULE_PAYMENT_RULE_ID_ERIOCNEMIS_SLS_ATCL_RULE_RULE_ID"
+            referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_PAYMENT_RULE_ID_ERIOCNEMIS_SALES_AUTOCANCEL_RULE_RULE_ID"
             table="eriocnemis_sales_autocancel_rule_payment"
             column="rule_id"
             referenceTable="eriocnemis_sales_autocancel_rule"
             referenceColumn="rule_id"
             onDelete="CASCADE"/>
-        <index referenceId="ERIOCNEMIS_SLS_ATCL_RULE_PAYMENT_METHOD" indexType="btree">
+        <index referenceId="ERIOCNEMIS_SALES_AUTOCANCEL_RULE_STORE_STORE_ID_STORE_STORE_ID" indexType="btree">
             <column name="payment_method"/>
         </index>
     </table>
