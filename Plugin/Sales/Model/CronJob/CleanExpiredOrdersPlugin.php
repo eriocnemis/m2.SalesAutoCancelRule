@@ -11,7 +11,7 @@ use Magento\Sales\Model\CronJob\CleanExpiredOrders;
 use Eriocnemis\SalesAutoCancelRule\Helper\Data as Helper;
 
 /**
- * Clean expired orders plugin
+ * Clean expired orders
  */
 class CleanExpiredOrdersPlugin
 {

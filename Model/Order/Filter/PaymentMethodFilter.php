@@ -12,7 +12,7 @@ use Magento\Sales\Api\Data\OrderInterface;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Payment method filter
+ * Payment method field filter
  */
 class PaymentMethodFilter implements FilterInterface
 {

@@ -11,7 +11,7 @@ use Magento\Framework\Model\AbstractModel;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Convert data to rule model interface
+ * Convert data to rule model
  *
  * @api
  */

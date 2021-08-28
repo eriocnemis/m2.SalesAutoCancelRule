@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Cancel orders by rule interface
+ * Cancel orders by rule
  *
  * @api
  */

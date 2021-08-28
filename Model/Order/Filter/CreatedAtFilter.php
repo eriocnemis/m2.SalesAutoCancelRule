@@ -14,7 +14,7 @@ use Magento\Sales\Api\Data\OrderInterface;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Created at filter
+ * Created at field filter
  */
 class CreatedAtFilter implements FilterInterface
 {

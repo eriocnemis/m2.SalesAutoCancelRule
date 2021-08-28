@@ -11,7 +11,7 @@ use Magento\Framework\Api\SearchResults;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleSearchResultInterface;
 
 /**
- * Rule search result
+ * Search result
  *
  * @api
  */

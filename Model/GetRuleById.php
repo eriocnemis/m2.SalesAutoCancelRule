@@ -15,7 +15,7 @@ use Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\Rule as RuleResource;
 use Eriocnemis\SalesAutoCancelRule\Model\RuleFactory;
 
 /**
- * Get rule by id
+ * Get rule by rule id
  *
  * @api
  */

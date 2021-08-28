@@ -11,7 +11,7 @@ use Magento\Sales\Api\Data\OrderInterface;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Cancel order interface
+ * Cancel order
  *
  * @api
  */

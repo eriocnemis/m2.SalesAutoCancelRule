@@ -12,7 +12,7 @@ use Eriocnemis\SalesAutoCancelRule\Api\CancelOrdersByRuleInterface;
 use Eriocnemis\SalesAutoCancelRule\Api\GetActiveRuleListInterface;
 
 /**
- * Cancel orders
+ * Search and cancel orders
  *
  * @api
  */

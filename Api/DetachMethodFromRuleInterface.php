@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Magento\Framework\Exception\CouldNotDeleteException;
 
 /**
- * Detach shipping methods from rule interface
+ * Detach shipping methods from rule
  *
  * @api
  */

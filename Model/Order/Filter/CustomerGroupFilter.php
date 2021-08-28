@@ -12,7 +12,7 @@ use Magento\Sales\Api\Data\OrderInterface;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Customer group filter
+ * Customer group field filter
  */
 class CustomerGroupFilter implements FilterInterface
 {

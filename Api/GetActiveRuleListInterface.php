@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleSearchResultInterface;
 
 /**
- * Find active rules by search criteria interface
+ * Find active rules by search criteria
  *
  * @api
  */

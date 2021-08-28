@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Magento\Framework\Exception\CouldNotDeleteException;
 
 /**
- * Detach customer groups from rule interface
+ * Detach customer groups from rule
  *
  * @api
  */

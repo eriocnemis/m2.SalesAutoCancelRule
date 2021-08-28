@@ -31,7 +31,7 @@ class FilterPool implements FilterPoolInterface
         foreach ($filters as $filter) {
             if (!$filter instanceof FilterInterface) {
                 throw new ConfigurationMismatchException(
-                     __('Cancel order filter must implement %1.', FilterInterface::class)
+                    __('Cancel order filter must implement %1.', FilterInterface::class)
                 );
             }
         }

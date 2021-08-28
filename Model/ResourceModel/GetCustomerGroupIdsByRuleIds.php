@@ -13,7 +13,7 @@ use Magento\Framework\Exception\LocalizedException;
 use Eriocnemis\SalesAutoCancelRule\Api\GetCustomerGroupIdsByRuleIdsInterface;
 
 /**
- * Get customer group ids by rule ids
+ * Get customer group ids
  */
 class GetCustomerGroupIdsByRuleIds implements GetCustomerGroupIdsByRuleIdsInterface
 {

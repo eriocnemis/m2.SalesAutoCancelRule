@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Magento\Framework\Exception\LocalizedException;
 
 /**
- * Get payment methods by rule id interface
+ * Get payment methods by rule id
  *
  * @api
  */

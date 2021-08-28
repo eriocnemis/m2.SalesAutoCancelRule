@@ -10,7 +10,7 @@ namespace Eriocnemis\SalesAutoCancelRule\Api;
 use Magento\Framework\Exception\LocalizedException;
 
 /**
- * Get customer group ids by rule id interface
+ * Get customer group ids by rule id
  *
  * @api
  */

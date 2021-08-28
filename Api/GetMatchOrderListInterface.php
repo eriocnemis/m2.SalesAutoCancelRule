@@ -11,7 +11,7 @@ use Magento\Sales\Api\Data\OrderSearchResultInterface;
 use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 
 /**
- * Find orders by search criteria interface
+ * Find orders by search criteria
  *
  * @api
  */

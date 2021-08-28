@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace Eriocnemis\SalesAutoCancelRule\Api;
 
 /**
- * Cancel orders interface
+ * Cancel orders
  *
  * @api
  */

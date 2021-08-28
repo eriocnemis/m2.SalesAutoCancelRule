@@ -14,7 +14,7 @@ use Eriocnemis\SalesAutoCancelRule\Api\CancelOrderInterface;
 use Eriocnemis\SalesAutoCancelRule\Model\Order\Handler\HandlerPoolInterface;
 
 /**
- * Cancel order
+ * Cancel order use rule
  *
  * @api
  */

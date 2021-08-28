@@ -13,7 +13,7 @@ use Magento\Framework\Exception\LocalizedException;
 use Eriocnemis\SalesAutoCancelRule\Api\GetStoreIdsByRuleIdsInterface;
 
 /**
- * Get store ids by rule ids
+ * Get store ids
  */
 class GetStoreIdsByRuleIds implements GetStoreIdsByRuleIdsInterface
 {
