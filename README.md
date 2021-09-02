@@ -1,6 +1,6 @@
-# Magento2 Sales Auto Cancel Rule
+# Magento2 Sales AutoCancel Rule
 
-The extension allows store owners to set up rule for an automated cancellation for orders after a specified time. Rules are based on order state, payment method, user group, store view. The module also makes it easy to add new conditions. This module is installed as part of [Eriocnemis Sales Auto Cancel Rule Kit](https://github.com/eriocnemis/m2.SalesAutoCancelRuleKit). It cannot be deleted or disabled.
+The extension allows store owners to set up rule for an automated cancellation for orders after a specified time. Rules are based on order state, payment method, user group, store view. The module also makes it easy to add new conditions. This module is installed as part of [Eriocnemis Sales AutoCancel Rule Kit](https://github.com/eriocnemis/m2.SalesAutoCancelRuleKit). It cannot be deleted or disabled.
 
 ## Extensibility
 
