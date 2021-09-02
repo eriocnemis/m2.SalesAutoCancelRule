@@ -39,7 +39,7 @@ class DeleteRuleByIdTest extends TestCase
      *
      * @return void
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $resource = $this->createMock(RuleResource::class);
         $ruleFactory = $this->createMock(RuleFactory::class);
