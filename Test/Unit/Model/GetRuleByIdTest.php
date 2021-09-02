@@ -41,7 +41,7 @@ class GetRuleByIdTest extends TestCase
      *
      * @return void
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $resource = $this->createMock(RuleResource::class);
         $ruleFactory = $this->createMock(RuleFactory::class);
