@@ -7,14 +7,15 @@ repos:
         args: ['--fix=lf']
     -   id: trailing-whitespace
     -   id: check-xml
-    -   id: check-yaml
     -   id: check-json
     -   id: pretty-format-json
         args: ["--indent=4", "--autofix", "--no-sort-keys"]
--   repo: https://github.com/eriocnemis/git.MagentoPreCommitHooks
-    rev: 1.0.8
+-   repo: https://github.com/eriocnemis/git.magento_pre_commit_hooks
+    rev: 1.0.10
     hooks:
+    -   id: magento-xml
     -   id: magento-phpcs
+        args: ["--autofix"]
     -   id: magento-phpmd
     -   id: magento-phpcpd
     -   id: magento-phpstan
