@@ -2,7 +2,7 @@
     "name": "eriocnemis/module-sales-autocancel-rule",
     "description": "The extension allows store owners to set up rule for an automated cancellation for orders after a specified time.",
     "type": "magento2-module",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "authors": [
         {
             "name": "Eriocnemis Team",
@@ -23,10 +23,10 @@
     },
     "autoload": {
         "files": [
-            "registration.php"
+            "src/registration.php"
         ],
         "psr-4": {
-            "Eriocnemis\\SalesAutoCancelRule\\": ""
+            "Eriocnemis\\SalesAutoCancelRule\\": "src"
         }
     }
 }
