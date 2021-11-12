@@ -8,8 +8,8 @@ declare(strict_types=1);
 namespace Eriocnemis\SalesAutoCancelRule\Test\Unit\Model;
 
 use PHPUnit\Framework\TestCase;
-use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use Eriocnemis\SalesAutoCancelRuleApi\Api\Data\RuleInterface;
 use Eriocnemis\SalesAutoCancelRule\Model\GetRuleById;
 use Eriocnemis\SalesAutoCancelRule\Model\ConvertRuleToData;
 use Eriocnemis\SalesAutoCancelRule\Model\ResourceModel\Rule as RuleResource;
@@ -17,9 +17,9 @@ use Eriocnemis\SalesAutoCancelRule\Model\RuleFactory;
 use Eriocnemis\SalesAutoCancelRule\Model\Rule;
 
 /**
- * Get rule by id with exception test
+ * Get rule by id
  */
-class NoSuchEntityExceptionTest extends TestCase
+class GetRuleByIdTest extends TestCase
 {
     /**
      * @var GetRuleById
@@ -27,12 +27,12 @@ class NoSuchEntityExceptionTest extends TestCase
     private $getRuleById;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var \PHPUnit\Framework\MockObject\MockObject
      */
     private $ruleFactory;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var \PHPUnit\Framework\MockObject\MockObject
      */
     private $resource;
 
@@ -71,9 +71,8 @@ class NoSuchEntityExceptionTest extends TestCase
      */
     public function execute()
     {
-        $this->expectException(NoSuchEntityException::class);
-
         $rule = $this->createMock(Rule::class);
+
         $this->ruleFactory->expects($this->once())
             ->method('create')
             ->willReturn($rule);
@@ -84,8 +83,8 @@ class NoSuchEntityExceptionTest extends TestCase
 
         $rule->expects($this->once())
             ->method('getId')
-            ->willReturn(null);
+            ->willReturn(10);
 
-        $this->getRuleById->execute(10);
+        $this->assertInstanceOf(RuleInterface::class, $this->getRuleById->execute(10));
     }
 }
